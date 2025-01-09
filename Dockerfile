@@ -11,7 +11,7 @@ WORKDIR /app
 # Copy toàn bộ thư mục code và các file từ root của repo
 COPY code ./code
 COPY requirements.txt .
-COPY .env .
+#COPY .env .
 
 # Cài đặt dependencies
 RUN pip install -r requirements.txt
