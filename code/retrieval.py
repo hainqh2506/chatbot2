@@ -1,12 +1,12 @@
 import streamlit as st
 import time
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from langchain_elasticsearch import ElasticsearchRetriever
 from model_config import VietnameseEmbeddings
 from typing import Dict
 import os
 # Configure logging with UTF-8 encoding
-#load_dotenv()
+load_dotenv()
 embeddings = VietnameseEmbeddings()
 ELASTIC_URL = os.getenv("ELASTIC_URL")
 
