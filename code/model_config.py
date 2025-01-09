@@ -106,7 +106,7 @@ def load_summarization_model(summarization_model_name: str = 'llama-3.1-70b-vers
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
     
     return ChatGroq(api_key=GROQ_API_KEY, model_name=summarization_model_name, max_tokens=max_tokens)
-def load_gpt4o_mini_model( model_name: str = "gpt-4o-mini", max_tokens: int = 512):
+def load_gpt4o_mini_model( model_name: str = "gpt-4o-mini"):
     """
     Hàm tải và khởi tạo mô hình chat từ ChatOpenAI.
     
@@ -116,7 +116,7 @@ def load_gpt4o_mini_model( model_name: str = "gpt-4o-mini", max_tokens: int = 51
     load_dotenv()
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     
-    return ChatOpenAI(api_key=OPENAI_API_KEY, model=model_name, max_tokens=max_tokens)
+    return ChatOpenAI(api_key=OPENAI_API_KEY, model=model_name ,temperature=0.7)
 # gemini
 def load_gemini(model_name: str = "gemini-1.5-flash"): #-8b
         # Load API keys từ .env file
