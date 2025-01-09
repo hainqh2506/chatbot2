@@ -135,7 +135,7 @@ def load_gemini(model_name: str = "gemini-1.5-flash"): #-8b
 def load_gemini2(model_name: str = "gemini-2.0-flash-exp"): #-8b
         # Load API keys từ .env file
     load_dotenv()
-    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY2")
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY1")
     
     llm = ChatGoogleGenerativeAI(
     model=model_name,

@@ -42,8 +42,8 @@ def initialize_model(selected_model):
         llm = load_together_model()
     elif selected_model == "Groq_llama-3.3-70b-versatile":
         llm = load_groq_model()
-    elif selected_model == "GPT4o Mini":
-        llm = load_gpt4o_mini_model()
+    # elif selected_model == "GPT4o Mini":
+    #     llm = load_gpt4o_mini_model()
     elif selected_model == "Gemini1.5Flash":
         llm = load_gemini15()
     else:
@@ -54,7 +54,7 @@ db, qa_db = initialize_db()
 # Thêm giao diện chọn model
 selected_model = st.sidebar.selectbox(
     "Chọn model",
-    [ "Together_ai.meta-llama/Llama-3.3-70B-Instruct-Turbo", "Groq_llama-3.3-70b-versatile", "GPT4o Mini","Gemini1.5Flash"]
+    [ "Together_ai.meta-llama/Llama-3.3-70B-Instruct-Turbo", "Groq_llama-3.3-70b-versatile","Gemini1.5Flash"]
     )
 
 # Khởi tạo model dựa trên lựa chọn
