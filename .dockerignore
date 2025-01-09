@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+.env.example
+pip-log.txt
+.tox
+.coverage
+.cache
+*.log
+.pytest_cache

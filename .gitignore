@@ -1,0 +1,48 @@
+# Các file Python
+\data\
+\ultil.py
+\db.py
+\a.ipynb
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Streamlit
+.streamlit/secrets.toml
+secrets.toml
+
+# Log files
+*.log
+\app.log
+
+# Local data
+data/
+*.pkl
+*.csv
+*.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
