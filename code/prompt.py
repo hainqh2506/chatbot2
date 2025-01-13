@@ -17,7 +17,6 @@ REWRITE_TEMPLATE = """
     - Link độc hại, lừa đảo
     - Nội dung chính trị, tôn giáo nhạy cảm
     - Câu hỏi không liên quan, không có ý nghĩa
-    - Câu hỏi xã giao đơn giản (ví dụ: chào, tạm biệt, bạn khỏe không)
     - Câu hỏi về thời tiết chung chung (ví dụ: hôm nay trời thế nào)
     - Giữ nguyên ##TRUY VẤN CỦA NGƯỜI DÙNG nếu đã rõ ràng và không thuộc các trường hợp trên.
     ĐỊNH DẠNG TRẢ VỀ:

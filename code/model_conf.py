@@ -13,7 +13,7 @@ from langchain_core.embeddings import Embeddings
 import numpy as np
 # Thay các dòng load_dotenv() và os.getenv() bằng st.secrets
 import streamlit as st
-
+# dùng cho secrets.toml
 def load_gpt4o_mini_model(model_name: str = "gpt-4o-mini", max_tokens: int = 512):
     return ChatOpenAI(api_key=st.secrets["api"]["openai"], model=model_name, max_tokens=max_tokens)
 
