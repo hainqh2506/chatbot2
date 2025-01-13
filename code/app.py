@@ -108,9 +108,9 @@ def check_faq(user_query, qa_db):  # Loại bỏ giá trị mặc định, `qa_d
     logger.info("Truy vấn DB cho FAQ...")
     # Gọi `semantic_qa_search` để tìm kiếm trong collection
     result = qa_db.invoke(user_query)  # Sử dụng `qa_db` truyền vào thay vì toàn cục
-
+    
     if len(result) > 0:
-        logger.info("Câu hỏi phù hợp tìm thấy trong QADB.")
+        logger.info(f"Câu hỏi phù hợp tìm thấy trong QADB. Score = {result[0].metadata.get('_score')}")
         return result[0].page_content  # Trả về câu trả lời tốt nhất
 
     logger.info("Không tìm thấy câu trả lời phù hợp trong QADB.")
@@ -121,16 +121,16 @@ def stream_text(text):
     """Generator function để stream từng từ của văn bản"""
     time.sleep(1)
     # Chuỗi mới được thêm vào cuối văn bản
-    new_text =text +"Nếu bạn có câu hỏi nào khác hãy cho tôi biết nhé! Mời bạn tham khảo thêm các thông tin khác tại đây: "
-    link = "[Thông tin thêm](https://ctsv.hust.edu.vn/#/so-tay-sv)"
+    new_text =text +" Nếu bạn có câu hỏi nào khác hãy cho tôi biết nhé! Mời bạn tham khảo thêm các thông tin khác tại đây: "
+    link = "[Sổ tay sinh viên](https://ctsv.hust.edu.vn/#/so-tay-sv)"
     # Streaming từng từ trong văn bản
     for word in new_text.split():
         yield word + " "
         # Nếu muốn điều chỉnh tốc độ stream, có thể thêm time.sleep()
         time.sleep(0.05)
-    
+    yield link
     # Sau khi hoàn thành streaming, hiển thị link
-    st.markdown(link)
+    #st.markdown(link)
 
 def get_response(user_query, chat_history, db, qa_db, llm):  # Thêm `qa_db` và `llm` làm tham số
     logger.info("=== Bắt đầu quá trình tạo câu trả lời ===")
